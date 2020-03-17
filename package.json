@@ -1,0 +1,16 @@
+{
+  "name": "redis-token-bucket",
+  "version": "0.0.1",
+  "description": "A distributed token bucket using Redis as the coordinator. Useful as a rate limiter.",
+  "keywords": ["redis", "tokenbucket", "ratelimit"],
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Dylan Tack",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^25.1.0",
+    "redis": "^3.0.2"
+  }
+}
