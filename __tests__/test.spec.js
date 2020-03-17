@@ -7,11 +7,11 @@ const redis_token_bucket = require('../index');
 let consume;
 let client;
 
-beforeAll(() => { 
+beforeAll(() => {
     const options = {
       host: 'localhost',
     }
-    client = redis.createClient(options)    
+    client = redis.createClient(options)
     consume = redis_token_bucket.getConsumer(client);
 });
 
@@ -59,7 +59,7 @@ describe('Consume tokens', () => {
 
     test('Bucket should refill', async () => {
         await new Promise(r => {setTimeout(r, config.refill_interval_ms)});
-        
+
         let result = await consume(key, config);
         expect(result.tokensLeft).toBe(0);
     });
